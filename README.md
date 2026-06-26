@@ -3,9 +3,18 @@
 Agent plugin marketplace repository for Codex extensions.
 
 This repository currently exposes one Codex marketplace, `agent-plugins`, with
-the `my-codex` plugin. It starts with Codex lifecycle hooks and is meant
-to grow with reusable skills, MCP configuration, scripts, and other agent
-workflow defaults.
+the `my-codex` plugin. It packages Codex lifecycle hooks and reusable skills,
+and is meant to grow with MCP configuration, scripts, and other agent workflow
+defaults.
+
+## Included capabilities
+
+- Hooks that play local lifecycle sounds for approval requests and completed
+  turns.
+- `use-mise`: Treat `mise.toml` as the source of truth for project tool
+  versions and environment setup while leaving task execution to just.
+- `use-just`: Treat `justfile` as the project task entrypoint and prefer
+  documented recipes over ad hoc command execution.
 
 ## Install
 

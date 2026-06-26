@@ -13,6 +13,8 @@ scripts, and other agent workflow defaults.
   turns.
 - `add-project-rules`: Copy a starter `.codex/rules/default.rules` into a
   project so command allowlists can be maintained per repository.
+- `commit-message`: Use `type: 日本語の概要` commit messages with Conventional
+  Commits types when a project has no more specific rule.
 - `use-mise`: Treat `mise.toml` as the source of truth for project tool
   versions and environment setup while leaving task execution to just.
 - `use-just`: Treat `justfile` as the project task entrypoint and prefer

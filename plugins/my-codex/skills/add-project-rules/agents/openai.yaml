@@ -1,0 +1,4 @@
+interface:
+  display_name: "Add Project Rules"
+  short_description: "Install project-local Codex rules templates."
+  default_prompt: "Add project-local Codex rules for this repository."

@@ -1,7 +1,7 @@
 {
   "name": "my-codex",
   "version": "0.1.0",
-  "description": "Custom Codex extensions for agent workflows.",
+  "description": "Custom Codex extensions for agent workflows, including skills, hooks, and project rule templates.",
   "skills": "./skills/",
   "author": {
     "name": "Agent Plugins Maintainers"
@@ -9,12 +9,13 @@
   "interface": {
     "displayName": "My Codex",
     "shortDescription": "Custom extensions for Codex workflows.",
-    "longDescription": "My Codex packages custom Codex workflow extensions, including lifecycle hooks and project tooling skills.",
+    "longDescription": "My Codex packages custom Codex workflow extensions, including lifecycle hooks, project tooling skills, and project-local Codex rule templates.",
     "developerName": "Agent Plugins Maintainers",
     "category": "Productivity",
     "capabilities": [
       "Hooks",
-      "Skills"
+      "Skills",
+      "Rules templates"
     ],
     "defaultPrompt": "Use My Codex."
   }

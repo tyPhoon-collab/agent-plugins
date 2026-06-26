@@ -1,0 +1,38 @@
+# Project-local Codex command rules.
+#
+# Keep this file in .codex/rules/default.rules for commands that are safe in
+# this repository because the repository owns the task definitions and review
+# process. Edit per project as workflows mature.
+
+prefix_rule(
+    pattern = ["git", "add"],
+    decision = "allow",
+    justification = "Staging local repository changes is allowed for this project.",
+    match = [
+        "git add README.md",
+        "git add .",
+        "git add -A",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", "commit"],
+    decision = "allow",
+    justification = "Creating local commits is allowed for this project.",
+    match = [
+        "git commit -m feat: update project rules",
+        "git commit --amend --no-edit",
+    ],
+)
+
+prefix_rule(
+    pattern = ["just"],
+    decision = "allow",
+    justification = "Project just recipes are the reviewed task entrypoint; destructive recipes should use just confirm.",
+    match = [
+        "just",
+        "just check",
+        "just test",
+        "just lint",
+    ],
+)

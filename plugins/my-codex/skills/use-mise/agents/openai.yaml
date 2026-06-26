@@ -1,0 +1,4 @@
+interface:
+  display_name: "Use Mise"
+  short_description: "Use mise for project tool versions."
+  default_prompt: "Use $use-mise to inspect and manage this project's tool versions."

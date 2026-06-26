@@ -1,0 +1,4 @@
+interface:
+  display_name: "Use Just"
+  short_description: "Use just as the project task runner."
+  default_prompt: "Use $use-just to find and run the right project task."

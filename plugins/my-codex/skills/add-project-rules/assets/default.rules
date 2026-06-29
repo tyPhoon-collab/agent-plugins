@@ -36,3 +36,59 @@ prefix_rule(
         "just lint",
     ],
 )
+
+prefix_rule(
+    pattern = ["gh", "pr", "view"],
+    decision = "allow",
+    justification = "Viewing GitHub pull request details is allowed for this project.",
+    match = [
+        "gh pr view",
+        "gh pr view 123",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "pr", "status"],
+    decision = "allow",
+    justification = "Checking GitHub pull request status is allowed for this project.",
+    match = [
+        "gh pr status",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "pr", "checks"],
+    decision = "allow",
+    justification = "Inspecting GitHub pull request checks is allowed for this project.",
+    match = [
+        "gh pr checks",
+        "gh pr checks 123",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "run", "view"],
+    decision = "allow",
+    justification = "Viewing GitHub Actions run details is allowed for this project.",
+    match = [
+        "gh run view 123456789",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "run", "list"],
+    decision = "allow",
+    justification = "Listing GitHub Actions runs is allowed for this project.",
+    match = [
+        "gh run list",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "issue", "view"],
+    decision = "allow",
+    justification = "Viewing GitHub issue details is allowed for this project.",
+    match = [
+        "gh issue view 123",
+    ],
+)

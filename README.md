@@ -12,7 +12,8 @@ scripts, and other agent workflow defaults.
 - Hooks that play local lifecycle sounds for approval requests and completed
   turns.
 - `add-project-rules`: Copy a starter `.codex/rules/default.rules` into a
-  project so command allowlists can be maintained per repository.
+  project so command allowlists can be maintained per repository, including
+  read-only GitHub CLI inspection commands.
 - `commit-message`: Use `type: 日本語の概要` commit messages with Conventional
   Commits types when a project has no more specific rule.
 - `use-mise`: Treat `mise.toml` as the source of truth for project tool

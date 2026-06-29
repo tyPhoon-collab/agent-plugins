@@ -1,13 +1,13 @@
 ---
 name: add-project-rules
-description: Install project-local Codex rules templates into a repository. Use when the user wants to add, copy, initialize, or update `.codex/rules/*.rules` for project-specific command allowlists such as `git add`, `git commit`, or `just`.
+description: Install project-local Codex rules templates into a repository. Use when the user wants to add, copy, initialize, or update `.codex/rules/*.rules` for project-specific command allowlists such as `git add`, `git commit`, `just`, or read-only `gh` commands.
 ---
 
 # Add Project Rules
 
 ## Overview
 
-Install a starter Codex rules file into the current repository so the project owns its command policy. The bundled template allows `git add`, `git commit`, and `just`, then expects each project to edit `.codex/rules/default.rules` as its workflow matures.
+Install a starter Codex rules file into the current repository so the project owns its command policy. The bundled template allows `git add`, `git commit`, `just`, and read-only `gh` inspection commands, then expects each project to edit `.codex/rules/default.rules` as its workflow matures.
 
 ## Workflow
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Worktree Switch"
+  short_description: "Switch Git worktrees safely from Codex"
+  default_prompt: "Use $worktree-switch to create a Codex-safe Worktrunk worktree for my next task."

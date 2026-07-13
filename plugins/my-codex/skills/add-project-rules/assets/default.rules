@@ -38,6 +38,25 @@ prefix_rule(
 )
 
 prefix_rule(
+    pattern = ["wt", "switch"],
+    decision = "allow",
+    justification = "Switching and creating Git worktrees through Worktrunk is allowed for this project.",
+    match = [
+        "wt switch",
+        "wt switch --create feature/example --no-cd --format json",
+    ],
+)
+
+prefix_rule(
+    pattern = ["wt", "list"],
+    decision = "allow",
+    justification = "Listing Git worktrees through Worktrunk is read-only and allowed for this project.",
+    match = [
+        "wt list",
+    ],
+)
+
+prefix_rule(
     pattern = ["gh", "pr", "view"],
     decision = "allow",
     justification = "Viewing GitHub pull request details is allowed for this project.",

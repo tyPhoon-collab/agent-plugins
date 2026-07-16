@@ -11,6 +11,8 @@ scripts, and other agent workflow defaults.
 
 - Hooks that play local lifecycle sounds for approval requests and completed
   turns.
+- `add-code-review-graph`: Configure code-review-graph as a project-scoped
+  Codex MCP server, ignore its local graph data, and run the initial build.
 - `add-project-rules`: Copy a starter `.codex/rules/default.rules` into a
   project so command allowlists can be maintained per repository, including
   read-only GitHub CLI inspection commands.

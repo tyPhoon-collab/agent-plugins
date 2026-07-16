@@ -1,0 +1,4 @@
+interface:
+  display_name: "Add Code Review Graph"
+  short_description: "Install project-scoped code review graph MCP."
+  default_prompt: "Use $add-code-review-graph to install code-review-graph for this repository."

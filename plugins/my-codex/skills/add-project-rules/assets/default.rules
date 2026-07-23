@@ -57,6 +57,26 @@ prefix_rule(
 )
 
 prefix_rule(
+    pattern = ["gh", "repo", "view"],
+    decision = "allow",
+    justification = "Viewing GitHub repository details is allowed for this project.",
+    match = [
+        "gh repo view",
+        "gh repo view owner/repository",
+    ],
+)
+
+prefix_rule(
+    pattern = ["gh", "repo", "list"],
+    decision = "allow",
+    justification = "Listing GitHub repositories is read-only and allowed for this project.",
+    match = [
+        "gh repo list",
+        "gh repo list owner",
+    ],
+)
+
+prefix_rule(
     pattern = ["gh", "pr", "view"],
     decision = "allow",
     justification = "Viewing GitHub pull request details is allowed for this project.",

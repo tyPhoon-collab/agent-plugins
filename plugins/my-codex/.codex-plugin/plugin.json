@@ -1,7 +1,7 @@
 {
   "name": "my-codex",
-  "version": "0.4.1",
-  "description": "Custom Codex extensions for agent workflows, including skills, hooks, project rule templates, project-scoped MCP setup, and commit message guidance.",
+  "version": "0.4.2",
+  "description": "Custom Codex extensions for agent workflows, including skills, hooks, project rule templates, project-scoped MCP setup, worktree lifecycle guidance, and commit message guidance.",
   "skills": "./skills/",
   "author": {
     "name": "Agent Plugins Maintainers"
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "My Codex",
     "shortDescription": "Custom extensions for Codex workflows.",
-    "longDescription": "My Codex packages custom Codex workflow extensions, including lifecycle hooks, project tooling skills, project-local Codex rule templates, project-scoped MCP setup, and commit message guidance.",
+    "longDescription": "My Codex packages custom Codex workflow extensions, including lifecycle hooks, project tooling skills, project-local Codex rule templates, project-scoped MCP setup, worktree lifecycle guidance, and commit message guidance.",
     "developerName": "Agent Plugins Maintainers",
     "category": "Productivity",
     "capabilities": [
@@ -17,7 +17,8 @@
       "Skills",
       "Rules templates",
       "Project-scoped MCP setup",
-      "Commit message guidance"
+      "Commit message guidance",
+      "Worktree lifecycle guidance"
     ],
     "defaultPrompt": "Use My Codex."
   }

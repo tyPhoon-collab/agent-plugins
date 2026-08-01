@@ -22,6 +22,9 @@ scripts, and other agent workflow defaults.
   versions and environment setup while leaving task execution to just.
 - `use-just`: Treat `justfile` as the project task entrypoint and prefer
   documented recipes over ad hoc command execution.
+- `worktree-switch`: Create and switch Worktrunk worktrees safely from Codex.
+- `worktree-cleanup`: Review and remove completed Worktrunk worktrees in
+  batches.
 
 ## Install
 

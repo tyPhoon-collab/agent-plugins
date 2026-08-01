@@ -35,3 +35,5 @@ Use `--no-hooks` when hooks would be slow, interactive, or unrelated to the task
 - Worktrunk docs define `--base` as the source branch for `--create`; it defaults to the default branch.
 - Worktrunk docs define `--no-cd` as skipping directory change after switching, useful for CI/automation.
 - If `--create` fails because the branch exists, retry without `--create`.
+
+For periodic cleanup of completed worktrees, use `$worktree-cleanup`.

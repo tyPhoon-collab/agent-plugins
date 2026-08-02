@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Tasks"
+  short_description: "Maintain a repo-local TASKS.md task ledger"
+  default_prompt: "Use $project-tasks to initialize or update this repository’s TASKS.md."

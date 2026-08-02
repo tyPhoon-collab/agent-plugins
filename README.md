@@ -25,6 +25,8 @@ scripts, and other agent workflow defaults.
 - `worktree-switch`: Create and switch Worktrunk worktrees safely from Codex.
 - `worktree-cleanup`: Review and remove completed Worktrunk worktrees in
   batches.
+- `project-tasks`: Maintain a repository-local `TASKS.md` task ledger from a
+  bundled initialization template.
 
 ## Install
 

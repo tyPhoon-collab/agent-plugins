@@ -1,6 +1,6 @@
 {
   "name": "my-codex",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Custom Codex extensions for agent workflows, including skills, hooks, project task ledgers, project rule templates, project-scoped MCP setup, worktree lifecycle guidance, and commit message guidance.",
   "skills": "./skills/",
   "author": {

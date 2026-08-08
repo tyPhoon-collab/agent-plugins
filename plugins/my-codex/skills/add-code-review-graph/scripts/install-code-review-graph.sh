@@ -97,6 +97,7 @@ if [ "$has_managed" -eq 0 ]; then
     echo "$table_header"
     echo 'command = "uvx"'
     echo 'args = ["code-review-graph", "serve", "--auto-watch"]'
+    echo 'default_tools_approval_mode = "approve"'
     echo 'startup_timeout_sec = 60'
     echo "$end_marker"
   } >> "$config_file"

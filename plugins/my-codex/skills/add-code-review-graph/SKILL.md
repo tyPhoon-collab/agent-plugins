@@ -15,8 +15,12 @@ required. Keep graph data in the repository and out of Git.
    is appropriate.
 2. Run `scripts/install-code-review-graph.sh`, passing the target repository
    when it is not the current directory.
-3. Report the files changed and the build/status result.
-4. Tell the user to trust the repository and restart Codex so the new MCP
+3. Offer to append the optional graph-usage instructions below to the target
+   repository's `AGENTS.md`. Ask for explicit user approval before changing it.
+4. If approved, append the managed instruction block only when it is not
+   already present. Preserve all existing `AGENTS.md` content.
+5. Report the files changed and the build/status result.
+6. Tell the user to trust the repository and restart Codex so the new MCP
    server loads.
 
 Install into the current repository:
@@ -51,9 +55,36 @@ Skip the initial graph build only when the user requests configuration alone:
 - Add `.code-review-graph/` to the repository `.gitignore`.
 - Preserve existing config. Stop when an unmanaged MCP section with the same
   name exists instead of overwriting it.
-- Do not modify `AGENTS.md`, Codex hooks, or `~/.codex/*`.
+- Do not modify `AGENTS.md` without explicit user approval.
+- Do not modify Codex hooks or `~/.codex/*`.
 - The package version intentionally floats because this workflow uses the
   latest available code-review-graph release.
+
+Optional `AGENTS.md` block:
+
+```md
+<!-- BEGIN my-codex: code-review-graph -->
+## Code Review Graph
+
+When the code-review-graph MCP server is available:
+
+- Use it first for repository exploration, code review, debugging, architecture,
+  and change-impact questions.
+- Start with `get_minimal_context_tool` when the task needs repository-wide
+  context.
+- Prefer targeted graph queries and minimal detail over broad scans.
+- Treat graph results as navigation and analysis hints; verify important
+  conclusions in source files.
+- Use normal file tools when graph data is unavailable, stale, too slow, or
+  insufficient.
+- Do not use graph tools for trivial edits where their overhead is not
+  worthwhile.
+
+<!-- END my-codex: code-review-graph -->
+```
+
+Never append this block silently. If the user declines, leave `AGENTS.md`
+unchanged and continue with MCP-only installation.
 
 ## Resource
 

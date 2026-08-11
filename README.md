@@ -18,6 +18,8 @@ scripts, and other agent workflow defaults.
   read-only GitHub CLI inspection commands.
 - `commit-message`: Use `type: 日本語の概要` commit messages with Conventional
   Commits types when a project has no more specific rule.
+- `compact`: Keep Japanese chat replies concise while preserving technical
+  content and safety-critical detail.
 - `use-mise`: Treat `mise.toml` as the source of truth for project tool
   versions and environment setup while leaving task execution to just.
 - `use-just`: Treat `justfile` as the project task entrypoint and prefer

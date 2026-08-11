@@ -1,0 +1,4 @@
+interface:
+  display_name: "Compact"
+  short_description: "Keep Japanese chat replies concise."
+  default_prompt: "Use $compact for a concise Japanese chat reply."

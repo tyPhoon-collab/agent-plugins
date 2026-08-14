@@ -1,48 +1,52 @@
-# Project tasks
+# Project Tasks
 
 <!-- Status: [ ] open / [/] in progress / [x] complete / [-] cancelled. -->
 
-## 現在地
+## Contents
 
-<!-- 現在の実装状態、完了済みの大きな区切り、次に向かう方向を書く。 -->
+<!-- Task の見出しだけを列挙する。Task がない場合は空欄にする。例：
+- [TASK-001：ログイン画面を追加](#task-001ログイン画面を追加)
+-->
 
-## 維持する設計
+## Current Status
 
-<!-- 次の作業でも壊してはいけない設計上の制約を書く。不要なら section ごと削除する。 -->
+<!-- 現在の実装状態と次に向かう方向を書く。Git管理時は完了TASKと短いコミットIDも残す。 -->
+
+## Tasks
 
 <!-- Task section example:
 
-## Task 1：...
+### TASK-001：ログイン画面を追加
 
-### 目的
+#### Purpose
 
 この task で変える理由を書く。
 
-### 作業
+#### Prerequisites
+
+- なし
+
+#### Work
 
 - [ ] 作業項目を書く
 
-### 受け入れ条件
+#### Acceptance Criteria
 
 - [ ] 完了を判定できる条件を書く
 
-### 検証
+#### Verification
 
 実行した test、確認手順、結果を書く。
 -->
 
-## 実装順
+## Common Acceptance Criteria
 
-<!-- task 間の順序や依存関係を書く。不要なら section ごと削除する。 -->
+- [ ] 変更範囲全体で満たす受け入れ条件を書く
 
-## 横断的な完了条件
-
-- [ ] 変更範囲に共通する検証を書く
-
-## 保留事項
+## Deferred Items
 
 - [ ] 判断または外部対応待ちの事項を書く
 
-## Scope外
+## Out of Scope
 
 - この task ledger の対象外とする事項を書く

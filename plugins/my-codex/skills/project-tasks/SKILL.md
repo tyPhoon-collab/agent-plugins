@@ -17,8 +17,9 @@ context, not as a complete historical log.
 cp <skill-dir>/assets/TASKS.md TASKS.md
 ```
 
-Resolve `<skill-dir>` from this skill's directory. Do not overwrite an
-existing `TASKS.md` or silently rename another task document.
+Resolve `<skill-dir>` from this skill's directory. Use the template only for
+initialization; do not overwrite or reapply it to an existing `TASKS.md`, and
+do not silently rename another task document.
 3. Inspect the repository and user goal before proposing the first tasks.
 4. Add proposed tasks only after showing the scope, dependencies, and
    acceptance criteria to the user.
@@ -28,56 +29,54 @@ existing `TASKS.md` or silently rename another task document.
 - Read the existing document before editing it.
 - Preserve its terminology, structure, numbering, and project-specific rules.
 - Use `[ ]` for open, `[/]` for in-progress, `[x]` for complete, and `[-]`
-  for cancelled items. Keep blocked or deferred work in `保留事項` unless
+  for cancelled items. Keep blocked or deferred work in `Deferred Items` unless
   the project already defines another status convention.
 - Keep task details actionable: purpose, work, acceptance criteria, and
-  verification.
-- Record current location, design constraints, implementation order,
-  cross-cutting completion conditions, deferred work, and out-of-scope items
-  when they materially help future sessions.
-- Do not mark work complete without evidence. Record relevant tests,
-  inspection, or other verification.
-- Ask before adding tasks, changing scope, marking tasks complete, or making
-  structural changes.
+  verification. Do not mark work complete without recorded verification.
+- Assign each new task the next unused ID in the ledger's single `TASK-001`
+  sequence. Keep IDs stable in headings, the `Contents`, and references, and
+  never reuse them after a task is deleted. Preserve an existing
+  project-specific ID convention.
+- Record current location, each task's prerequisites, task-common acceptance
+  criteria, deferred work, and out-of-scope items when they materially help
+  future sessions.
+- Derive implementation order from each task's `Prerequisites`; do not maintain
+  a separate implementation-order section.
+- Keep `TASKS.md`'s `Contents` limited to task headings. Update it when adding,
+  removing, or renaming a task; leave it empty when no tasks exist. Keep task
+  details under `## Tasks`.
+- Ask before adding tasks, changing scope, or marking tasks complete. Routine
+  cleanup of verified terminal tasks follows the Git rules below.
 - Do not execute a task merely because it is listed. Hand execution to the
   applicable workflow or implementation request.
 
 ## Git
 
-Treat `TASKS.md` as a Git-managed project artifact.
+Apply this section only when `TASKS.md` is not gitignored and the project
+intends to track it in Git. If it is ignored or intentionally untracked, skip
+these Git-specific commit and cleanup rules.
 
-- As a rule, include task status and verification updates in the same commit
-  as the implementation they describe. Use a follow-up documentation commit
-  when the update happens after the implementation commit.
+- Include task status and verification updates in the implementation commit.
+  Use a follow-up documentation commit when they happen later.
 - Commit planning-only or maintenance-only changes as a documentation commit.
-- Do not add a commit hash to `TASKS.md` before the commit exists. Git history
-  already records the relationship.
-- Delete completed task details in a later cleanup commit, not the
-  implementation commit. This keeps the detailed completed task in the
-  implementation commit's parent history.
+- For a completed task, after the implementation commit exists, record the
+  task ID and short commit hash in `Current Status`, then remove the task
+  details in a later cleanup commit. Never write the hash before the commit
+  exists.
 - Do not stage or commit automatically. When the user requests a commit, use
   the applicable commit workflow and include `TASKS.md` when its changes are
   part of that work.
 
 ## Completed Tasks
 
-Keep completed task details until they are no longer useful. A user may ask
-to prune completed tasks in batches.
-
-Before deleting a terminal task (`[x]` complete or `[-]` cancelled), verify or
-ask the user to confirm that:
+Before deleting a completed task (`[x]`), verify that:
 
 - its work and acceptance criteria are complete;
 - verification is recorded;
-- implementation changes are represented in Git history; and
-- the user approves removing the task details from `TASKS.md`.
+- when Git rules apply, implementation changes are represented in Git history.
 
-Do not delete an in-progress (`[/]`) task. Show deletion candidates, evidence,
-and any dependent references first. Do not renumber later tasks after deletion.
-Preserve a short current-location note when later work depends on the deleted
-tasks; otherwise remove the details and defer history to Git.
-
-## Template
-
-Use [assets/TASKS.md](assets/TASKS.md) only for initializing a missing file.
-Do not reapply it to an existing document.
+Before deleting a cancelled task (`[-]`), verify that its cancellation reason
+is recorded. Do not delete an in-progress (`[/]`) task. Do not renumber later
+tasks after deletion. Keep the corresponding short `Current Status` note while
+it remains useful; when Git rules apply, include the short commit hash for a
+completed task.

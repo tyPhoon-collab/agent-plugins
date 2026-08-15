@@ -59,10 +59,7 @@ these Git-specific commit and cleanup rules.
 - Include task status and verification updates in the implementation commit.
   Use a follow-up documentation commit when they happen later.
 - Commit planning-only or maintenance-only changes as a documentation commit.
-- For a completed task, after the implementation commit exists, record the
-  task ID and short commit hash in `Current Status`, then remove the task
-  details in a later cleanup commit. Never write the hash before the commit
-  exists.
+- Treat Git history as the source of truth for implementation changes.
 - Do not stage or commit automatically. When the user requests a commit, use
   the applicable commit workflow and include `TASKS.md` when its changes are
   part of that work.
@@ -78,5 +75,4 @@ Before deleting a completed task (`[x]`), verify that:
 Before deleting a cancelled task (`[-]`), verify that its cancellation reason
 is recorded. Do not delete an in-progress (`[/]`) task. Do not renumber later
 tasks after deletion. Keep the corresponding short `Current Status` note while
-it remains useful; when Git rules apply, include the short commit hash for a
-completed task.
+it remains useful.

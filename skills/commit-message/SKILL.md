@@ -1,19 +1,20 @@
 ---
 name: commit-message
-description: "Use when drafting, reviewing, or choosing a git commit message. If the project has no explicit rule, use `type: 日本語の概要` with a Conventional Commits type."
+description: "Use when drafting, reviewing, or choosing a git commit message. Follow project conventions first, then explicit user instructions; otherwise use `type: 日本語の概要` with a Conventional Commits type."
 ---
 
 # Commit Message
 
 ## Overview
 
-Make commit messages clear and predictable. When the project has no stronger rule, use a Conventional Commits type followed by a concise Japanese summary.
+Make commit messages clear and predictable. Follow project conventions first; when neither project conventions nor user instructions specify a format, use a Conventional Commits type followed by a concise Japanese summary.
 
 ## Rule
 
 1. Check for project-specific commit message instructions in files such as `AGENTS.md`, `CONTRIBUTING.md`, `.github/`, release docs, or existing nearby commit history.
-2. If a project-specific rule exists, follow it.
-3. If no project-specific rule exists, use this format:
+2. If a project-specific rule or established commit-message convention exists, follow it.
+3. If neither exists and the user specifies a format or asks to match existing messages, follow the user's instruction.
+4. Otherwise, use this format:
 
 ```text
 type: 日本語の概要

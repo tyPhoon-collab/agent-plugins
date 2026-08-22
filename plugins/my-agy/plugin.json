@@ -1,0 +1,5 @@
+{
+  "name": "my-agy",
+  "version": "0.1.2",
+  "description": "Custom Antigravity (AGY) extensions for agent workflows, including skills, lifecycle hooks, rules, and tooling defaults."
+}

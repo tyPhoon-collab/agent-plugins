@@ -1,0 +1,11 @@
+{
+  "sound-notifications": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "./hooks/sound.sh Stop",
+        "timeout": 3
+      }
+    ]
+  }
+}

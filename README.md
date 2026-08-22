@@ -1,36 +1,28 @@
 # agent-plugins
 
-Agent plugin marketplace repository for Codex extensions.
+Agent plugin marketplace repository for Codex and Antigravity (AGY) extensions.
 
-This repository currently exposes one Codex marketplace, `agent-plugins`, with
-the `my-codex` plugin. It packages Codex lifecycle hooks, reusable skills, and
-project-local rule templates, and is meant to grow with MCP configuration,
-scripts, and other agent workflow defaults.
+This repository packages lifecycle hooks, reusable skills, rules, and tooling defaults across AI coding agents:
+- **`plugins/my-codex`**: Extensions for OpenAI Codex.
+- **`plugins/my-agy`**: Extensions for Google Antigravity (AGY).
+- **`skills/`**: Shared agent-agnostic skill markdown definitions, referenced via relative symlinks from plugins.
 
 ## Included capabilities
 
-- Hooks that play local lifecycle sounds for approval requests and completed
-  turns.
-- `add-code-review-graph`: Configure code-review-graph as a project-scoped
-  Codex MCP server, ignore its local graph data, and run the initial build.
-- `add-project-rules`: Copy a starter `.codex/rules/default.rules` into a
-  project so command allowlists can be maintained per repository, including
-  read-only GitHub CLI inspection commands.
-- `commit-message`: Use `type: 日本語の概要` commit messages with Conventional
-  Commits types when a project has no more specific rule.
-- `compact`: Keep Japanese chat replies concise while preserving technical
-  content and safety-critical detail.
-- `use-mise`: Treat `mise.toml` as the source of truth for project tool
-  versions and environment setup while leaving task execution to just.
-- `use-just`: Treat `justfile` as the project task entrypoint and prefer
-  documented recipes over ad hoc command execution.
-- `worktree-switch`: Create and switch Worktrunk worktrees safely from Codex.
-- `worktree-cleanup`: Review and remove completed Worktrunk worktrees in
-  batches.
-- `project-tasks`: Maintain a repository-local `TASKS.md` task ledger from a
-  bundled initialization template.
+- **Lifecycle hooks**: Play local sounds for approval requests and completed turns (`afplay` on macOS).
+- **`compact`**: Keep Japanese chat replies concise while preserving technical content and safety-critical detail.
+- **`commit-message`**: Use `type: 日本語の概要` commit messages with Conventional Commits types when a project has no more specific rule.
+- **`use-mise`**: Treat `mise.toml` as the source of truth for project tool versions and environment setup while leaving task execution to just.
+- **`use-just`**: Treat `justfile` as the project task entrypoint and prefer documented recipes over ad hoc command execution.
+- **`worktree-switch`**: Create and switch Worktrunk worktrees safely.
+- **`worktree-cleanup`**: Review and remove completed Worktrunk worktrees in batches.
+- **`project-tasks`**: Maintain a repository-local `TASKS.md` task ledger from a bundled initialization template.
+- **`add-project-rules`**: Copy a starter rule file (`.codex/rules/default.rules` for Codex, `AGENTS.md` for Antigravity) into a target repository.
+- **`add-code-review-graph`**: Configure code-review-graph as a project-scoped MCP server (`.codex/config.toml` for Codex, `.agents/mcp_config.json` for Antigravity).
 
-## Install
+## Install & Usage
+
+### For Codex
 
 Install from GitHub:
 
@@ -39,21 +31,43 @@ codex plugin marketplace add tyPhoon-collab/agent-plugins --ref main
 codex plugin add my-codex@agent-plugins
 ```
 
-After installation, start a new Codex thread. Use `/hooks` to review and trust
-any lifecycle hooks bundled by installed plugins.
+After installation, start a new Codex thread. Use `/hooks` to review and trust any lifecycle hooks bundled by installed plugins.
 
-## Local development
+Local development:
 
 ```sh
 codex plugin marketplace add /path/to/agent-plugins
 codex plugin add my-codex@agent-plugins
 ```
 
-If switching from a local marketplace to GitHub, remove and re-add the
-marketplace:
+### For Antigravity (AGY)
+
+#### CLI command installation (Recommended)
+
+Install directly from GitHub or a local directory:
 
 ```sh
-codex plugin marketplace remove agent-plugins
-codex plugin marketplace add tyPhoon-collab/agent-plugins --ref main
-codex plugin add my-codex@agent-plugins
+# Remote GitHub repository
+agy plugin install https://github.com/tyPhoon-collab/agent-plugins.git
+
+# Local installation
+agy plugin install /path/to/agent-plugins/plugins/my-agy
+
+# Validate plugin
+agy plugin validate /path/to/agent-plugins/plugins/my-agy
 ```
+
+#### Manual / Workspace installation
+
+- **Global configuration**:
+  ```sh
+  mkdir -p ~/.gemini/config/plugins
+  ln -s /path/to/agent-plugins/plugins/my-agy ~/.gemini/config/plugins/my-agy
+  ```
+- **Project workspace**:
+  ```sh
+  mkdir -p .agents/plugins
+  ln -s /path/to/agent-plugins/plugins/my-agy .agents/plugins/my-agy
+  ```
+
+

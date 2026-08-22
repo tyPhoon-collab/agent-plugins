@@ -6,5 +6,6 @@
 - 公開 repo として扱うため、ローカル絶対パス、private hostname、メールアドレス、token、secret、マシン固有値を入れない
 - 共通スキル実体は `skills/` 配下に置き、各 plugin からは相対 symlink で参照する
 - Codex marketplace は `.agents/plugins/marketplace.json`、plugin 本体は `plugins/` 配下に置く
+- plugin の内容を変更したら、対応する `plugin.json` の version も更新する
 - capabilities を増やしたら、`README.md` と `.codex-plugin/plugin.json` の説明を更新する
 - コミットメッセージは `type: 日本語の概要` の形式にし、type は Conventional Commits に従う

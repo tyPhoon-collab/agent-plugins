@@ -5,7 +5,7 @@ Agent plugin marketplace repository for Codex and Antigravity (AGY) extensions.
 This repository packages lifecycle hooks, reusable skills, rules, and tooling defaults across AI coding agents:
 - **`plugins/my-codex`**: Extensions for OpenAI Codex.
 - **`plugins/my-agy`**: Extensions for Google Antigravity (AGY).
-- **`skills/`**: Shared agent-agnostic skill markdown definitions, referenced via relative symlinks from plugins.
+- **`skills/`**: Source of truth for shared agent-agnostic skills, copied into each plugin for distribution.
 
 ## Included capabilities
 
@@ -21,6 +21,17 @@ This repository packages lifecycle hooks, reusable skills, rules, and tooling de
 - **`add-code-review-graph`**: Configure code-review-graph as a project-scoped MCP server (`.codex/config.toml` for Codex, `.agents/mcp_config.json` for Antigravity).
 
 ## Install & Usage
+
+### Sync shared skills
+
+After changing `skills/`, regenerate the copies in both plugins:
+
+```sh
+./scripts/sync-skills.sh
+```
+
+The command preserves plugin-specific files and agent-specific skills.
+Real files are required because Codex does not discover plugin skills through symbolic links.
 
 ### For Codex
 
@@ -69,5 +80,3 @@ agy plugin validate /path/to/agent-plugins/plugins/my-agy
   mkdir -p .agents/plugins
   ln -s /path/to/agent-plugins/plugins/my-agy .agents/plugins/my-agy
   ```
-
-

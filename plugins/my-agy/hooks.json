@@ -3,7 +3,16 @@
     "Stop": [
       {
         "type": "command",
-        "command": "./hooks/sound.sh Stop",
+        "command": "bash ./hooks/sound.sh Stop",
+        "timeout": 3
+      }
+    ]
+  },
+  "terminal-notifications": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "bash ./hooks/notify.sh Stop",
         "timeout": 3
       }
     ]

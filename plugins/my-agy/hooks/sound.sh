@@ -9,7 +9,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
     Stop)
       afplay /System/Library/Sounds/Glass.aiff >/dev/null 2>&1 &
       ;;
-    Alert|Permission)
+    PreToolUse|Alert|Permission)
       afplay /System/Library/Sounds/Hero.aiff >/dev/null 2>&1 &
       ;;
   esac

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Worktree Finish"
+  short_description: "Merge and remove a completed Git worktree"
+  default_prompt: "Use $worktree-finish to merge and clean up this committed Worktrunk worktree."

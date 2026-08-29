@@ -16,6 +16,7 @@ This repository packages lifecycle hooks, reusable skills, rules, and tooling de
 - **`use-mise`**: Treat `mise.toml` as the source of truth for project tool versions and environment setup while leaving task execution to just.
 - **`use-just`**: Treat `justfile` as the project task entrypoint and prefer documented recipes over ad hoc command execution.
 - **`worktree-switch`**: Create and switch Worktrunk worktrees safely.
+- **`worktree-finish`**: Merge and remove a completed Worktrunk worktree.
 - **`worktree-cleanup`**: Review and remove completed Worktrunk worktrees in batches.
 - **`project-tasks`**: Maintain a repository-local `TASKS.md` task ledger from a bundled initialization template.
 - **`add-project-rules`**: Copy a starter rule file (`.codex/rules/default.rules` for Codex, `AGENTS.md` for Antigravity) into a target repository.

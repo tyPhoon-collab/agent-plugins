@@ -1,7 +1,7 @@
 {
   "name": "my-codex",
-  "version": "0.6.8",
-  "description": "Custom Codex extensions for agent workflows, including skills, hooks, beginner-friendly explanations, concise Japanese chat replies, project task ledgers, project rule templates, project-scoped MCP setup, worktree lifecycle guidance, and commit message guidance.",
+  "version": "0.6.9",
+  "description": "Custom Codex extensions for agent workflows, including skills, hooks, beginner-friendly explanations, concise Japanese chat replies, project task ledgers, project rule templates, project-scoped MCP setup, worktree switch, finish, and cleanup guidance, and commit message guidance.",
   "skills": "./skills/",
   "author": {
     "name": "Agent Plugins Maintainers"
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "My Codex",
     "shortDescription": "Custom extensions for Codex workflows.",
-    "longDescription": "My Codex packages custom Codex workflow extensions, including lifecycle hooks, beginner-friendly explanations, concise Japanese chat replies, project task ledgers, project tooling skills, project-local Codex rule templates, project-scoped MCP setup, worktree lifecycle guidance, and commit message guidance.",
+    "longDescription": "My Codex packages custom Codex workflow extensions, including lifecycle hooks, beginner-friendly explanations, concise Japanese chat replies, project task ledgers, project tooling skills, project-local Codex rule templates, project-scoped MCP setup, worktree switch, finish, and cleanup guidance, and commit message guidance.",
     "developerName": "Agent Plugins Maintainers",
     "category": "Productivity",
     "capabilities": [
@@ -21,6 +21,7 @@
       "Project-scoped MCP setup",
       "Commit message guidance",
       "Worktree lifecycle guidance",
+      "Worktree finish guidance",
       "Project task ledgers"
     ],
     "defaultPrompt": "Use My Codex."

@@ -26,12 +26,18 @@ Use just as the project task runner. Let mise manage tool versions and environme
 
 1. Add or reuse a recipe instead of repeating long commands in docs, scripts, or CI.
 2. Require doc comments for public recipes and modules so `just --list` stays useful.
-3. Group related public recipes with `[group("name")]` to keep `just --list` readable.
+3. Use `[group("name")]` only when distinct categories materially improve a crowded `just --list`; omit it for small or obvious recipe sets.
 4. Use `[confirm]` or `[confirm("message")]` for destructive, deploy, publish, and cleanup recipes.
 5. Use `[working-directory("path")]` instead of `cd path && ...` for recipes that run from a subdirectory.
 6. Use private `_name` recipes for internal helpers; short private helpers do not need comments.
 7. Use recipe dependencies for prerequisite tasks and execution order whenever possible: use `test: build` for prior dependencies, `publish: test && deploy` for subsequent dependencies, and `push target: (build target)` when passing arguments; use recursive `just` calls inside recipe bodies only when dependency syntax cannot express the required ordering.
 8. Use module recipe paths for cross-module dependencies, for example `ci: test::unit lint::all`.
+
+## Script Recipes
+
+- Use `[script]` for long or stateful recipes with variables, loops, conditionals, or multi-line logic.
+- Use `[script(COMMAND)]` or `set script-interpreter` when a recipe needs a specific interpreter; do not assume `set shell` applies.
+- Keep short command sequences as regular recipes.
 
 ## Guardrails
 

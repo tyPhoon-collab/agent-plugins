@@ -1,13 +1,9 @@
 Use `caveman` ultra and `ponytail` skills.
 
-After implementation:
-1. Review your own diff critically for bugs, regressions, unnecessary complexity,
-   missing edge cases, and violations of repository conventions.
-2. Run the relevant tests/lints/type checks.
-3. Fix every issue you find.
-4. Review the resulting diff again.
-5. Repeat until no actionable issues remain and validation passes.
-6. Only then report completion.
+After implementation, perform at least one self-review and run relevant checks.
+If the review or checks reveal a clear issue, fix it and repeat the affected
+review or checks. Stop when the latest pass finds no actionable issue and
+validation passes. Do not pursue unrelated or speculative improvements.
 
 # RTK - Rust Token Killer
 

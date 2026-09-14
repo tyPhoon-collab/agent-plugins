@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "agent-plugins",
+  "owner": {
+    "name": "Agent Plugins Maintainers"
+  },
+  "metadata": {
+    "description": "Reusable plugins for AI coding agents, including oh-my-pi.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "my-omp",
+      "description": "Shared workflow skills for oh-my-pi.",
+      "version": "0.1.0",
+      "source": "./plugins/my-omp",
+      "category": "productivity",
+      "repository": "https://github.com/tyPhoon-collab/agent-plugins"
+    }
+  ]
+}

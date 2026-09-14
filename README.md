@@ -1,10 +1,11 @@
 # agent-plugins
 
-Agent plugin marketplace repository for Codex and Antigravity (AGY) extensions.
+Agent plugin marketplace repository for Codex, Antigravity (AGY), and oh-my-pi extensions.
 
 This repository packages lifecycle hooks, reusable skills, rules, and tooling defaults across AI coding agents:
 - **`plugins/my-codex`**: Extensions for OpenAI Codex.
 - **`plugins/my-agy`**: Extensions for Google Antigravity (AGY).
+- **`plugins/my-omp`**: Extensions for oh-my-pi (OMP).
 - **`skills/`**: Source of truth for shared agent-agnostic skills, copied into each plugin for distribution.
 
 ## Included capabilities
@@ -27,7 +28,7 @@ This repository packages lifecycle hooks, reusable skills, rules, and tooling de
 
 ### Sync shared skills
 
-After changing `skills/`, regenerate the copies in both plugins:
+After changing `skills/`, regenerate the copies in all plugins:
 
 ```sh
 ./scripts/sync-skills.sh
@@ -83,3 +84,19 @@ agy plugin validate /path/to/agent-plugins/plugins/my-agy
   mkdir -p .agents/plugins
   ln -s /path/to/agent-plugins/plugins/my-agy .agents/plugins/my-agy
   ```
+
+### For oh-my-pi (OMP)
+
+Install from the marketplace:
+
+```sh
+omp plugin marketplace add tyPhoon-collab/agent-plugins
+omp plugin install my-omp@agent-plugins
+```
+
+Local development:
+
+```sh
+omp plugin marketplace add /path/to/agent-plugins
+omp plugin install my-omp@agent-plugins
+```

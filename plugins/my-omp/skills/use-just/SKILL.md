@@ -1,6 +1,6 @@
 ---
 name: use-just
-description: Use when working in a project with a `justfile`, `Justfile`, or `.justfile`, or when adding, reviewing, or running project tasks. Treat just as the project task runner; inspect `just --list` before calling package-manager or language-specific commands directly.
+description: Use when selecting, adding, or running a project task in a project with a `justfile`, `Justfile`, or `.justfile`. Treat just as the project task runner; inspect `just --list` when the available recipes are unknown.
 ---
 
 # Use Just
@@ -10,8 +10,9 @@ Use just as the project task runner. Let mise manage tool versions and environme
 ## Project Orientation
 
 1. Look for `justfile`, `Justfile`, or `.justfile`.
-2. Run `just --list` to understand available recipes before choosing commands.
-3. If modules are present, run `just --list --list-submodules` to include module recipes.
+2. Run `just --list` when choosing a recipe and the available recipes are
+   unknown; reuse the result while the justfile is unchanged.
+3. If module recipes are needed and their list is unknown, run `just --list --list-submodules`.
 4. Prefer existing recipes for build, test, lint, format, generate, dev, and CI flows.
 5. If both just and mise are present, let just answer "which task should run?" and mise answer "which tools and versions?"
 

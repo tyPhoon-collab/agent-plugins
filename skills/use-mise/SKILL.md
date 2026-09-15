@@ -1,6 +1,6 @@
 ---
 name: use-mise
-description: Use when starting work in a project that may define developer tools with mise, when inspecting or changing mise config, or when adding a project tool. Treat mise as the source of truth for tool versions and environment setup; delegate task running to just when a justfile exists.
+description: Use when configuring or running project tool versions managed by mise, or when adding a project tool. Treat mise as the source of truth for tool versions and environment setup; delegate task running to just when a justfile exists.
 ---
 
 # Use Mise
@@ -9,7 +9,7 @@ Use mise for project tool versions and environment setup. Let just handle projec
 
 ## Project Orientation
 
-1. Look for mise configuration before inferring tools from package files:
+1. When the task needs tool-version or environment information, look for mise configuration before inferring tools from package files:
    - `mise.toml`
    - `.mise.toml`
    - `mise/config.toml`

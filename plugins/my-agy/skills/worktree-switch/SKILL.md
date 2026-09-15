@@ -29,7 +29,8 @@ Use `wt switch` with `--no-cd` from Codex. Codex can access the created worktree
      changes to a new worktree, move them without asking again.
    - If the user explicitly asks to leave the changes in the current worktree,
      do so without asking again.
-   - Otherwise, ask whether to leave the changes or move them.
+   - If the worktree is dirty and the user has not specified whether to leave
+     or move the changes, ask.
    - If the base is ambiguous, ask whether to use the local or remote branch
      unless the user explicitly specified one.
    - Ask once when both choices need confirmation. Never discard changes.

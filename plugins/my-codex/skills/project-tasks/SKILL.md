@@ -1,6 +1,6 @@
 ---
 name: project-tasks
-description: Maintain a repository-local `TASKS.md` as a living project task ledger. Use when initializing, reading, planning, updating, verifying, completing, or pruning project tasks, roadmap items, acceptance criteria, deferred work, or scope boundaries. Do not use it to execute the tasks themselves.
+description: Maintain a repository-local `TASKS.md` as a living project task ledger. Use when initializing, updating, verifying, completing, or pruning that ledger. Do not use it to execute the tasks themselves.
 ---
 
 # Project Tasks
@@ -21,8 +21,8 @@ Resolve `<skill-dir>` from this skill's directory. Use the template only for
 initialization; do not overwrite or reapply it to an existing `TASKS.md`, and
 do not silently rename another task document.
 3. Inspect the repository and user goal before proposing the first tasks.
-4. Add proposed tasks only after showing the scope, dependencies, and
-   acceptance criteria to the user.
+4. For a planning-only request, show the scope, dependencies, and acceptance
+   criteria before adding proposed tasks.
 
 ## Maintain
 
@@ -45,8 +45,10 @@ do not silently rename another task document.
 - Keep `TASKS.md`'s `Contents` limited to task headings. Update it when adding,
   removing, or renaming a task; leave it empty when no tasks exist. Keep task
   details under `## Tasks`.
-- Ask before adding tasks, changing scope, or marking tasks complete. Routine
-  cleanup of verified terminal tasks follows the Git rules below.
+- Ask before adding tasks or changing scope when the user has not already
+  specified them. Treat an explicit request to update or complete a task as
+  authorization; do not ask again. Routine cleanup of verified terminal tasks
+  follows the Git rules below.
 - Do not execute a task merely because it is listed. Hand execution to the
   applicable workflow or implementation request.
 

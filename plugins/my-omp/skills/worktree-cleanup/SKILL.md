@@ -22,7 +22,9 @@ wt list
 4. Identify completed candidates. Check status and branch state when the list
    is not sufficient. Keep the current worktree, active work, and branches
    with uncommitted changes out of the removal set by default.
-5. Show the exact branches to remove and get confirmation before deletion.
+5. Show the exact branches to remove and get confirmation before deletion,
+   unless the user already approved that exact removal set in the current
+   request.
 6. Remove approved branches in the foreground so completion can be verified:
 
 ```sh

@@ -1,4 +1,7 @@
-Use `caveman` ultra and `ponytail` skills.
+Use `compact` and `ponytail` skills.
+
+Use `ast-grep outline` to inspect source structure and symbols.
+Use `ast-grep run` for simple syntax searches and `ast-grep scan` for relational rules.
 
 After implementation, perform at least one self-review and run relevant checks.
 If the review or checks reveal a clear issue, fix it and repeat the affected
@@ -38,14 +41,3 @@ rtk gain
 which rtk
 ```
 
-## Tools
-
-### zat
-
-A code outline viewer that shows exported symbol signatures with line numbers.
-
-Prefer `zat` over `cat`/`Read` when you need signatures, not full implementation. Use the line numbers in the output to `Read(offset, limit)` into specific sections.
-
-Supported languages: C, C++, C#, Go, Haskell, Java, JavaScript, Kotlin, Markdown, Python, Ruby, Rust, Swift, TypeScript/TSX
-
-`zat` exits with code 1 for unsupported languages.

@@ -1,18 +1,29 @@
-Use `compact` and `ponytail` skills.
+Use `compact`
 
-Use `ast-grep outline` to inspect source structure and symbols.
-Use `ast-grep run` for simple syntax searches and `ast-grep scan` for relational rules.
+When you develop something, Use `ponytail` and `ast-grep`
+
+Do not fix unless the clear cause is identified.
 
 After implementation, perform at least one self-review and run relevant checks.
 If the review or checks reveal a clear issue, fix it and repeat the affected
 review or checks. Stop when the latest pass finds no actionable issue and
 validation passes. Do not pursue unrelated or speculative improvements.
 
-# RTK - Rust Token Killer
+Commit history should be clean and only reviewed and organized commits should be made.
+
+## Test
+
+Prefer the smallest test that protects a meaningful behavioral contract.
+Do not preserve incidental implementation details or one-off reproduction values unless they are themselves part of the contract.
+Before adding a regression test, generalize the bug into the invariant that was violated.
+
+## Tools
+
+### RTK - Rust Token Killer
 
 **Usage**: Token-optimized CLI proxy for shell commands.
 
-## Rule
+#### Rule
 
 Always prefix shell commands with `rtk`.
 
@@ -25,7 +36,7 @@ rtk npm run build
 rtk pytest -q
 ```
 
-## Meta Commands
+#### Meta Commands
 
 ```bash
 rtk gain            # Token savings analytics
@@ -33,7 +44,7 @@ rtk gain --history  # Recent command savings history
 rtk proxy <cmd>     # Run raw command without filtering
 ```
 
-## Verification
+#### Verification
 
 ```bash
 rtk --version

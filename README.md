@@ -38,6 +38,8 @@ After changing `skills/`, regenerate the copies in all plugins:
 The command preserves plugin-specific files and agent-specific skills.
 Real files are required because Codex does not discover plugin skills through symbolic links.
 
+外部 skill の導入用スクリプト: [`scripts/install-external-skills.sh`](scripts/install-external-skills.sh)
+
 ### For Codex
 
 Install from GitHub:

@@ -1,7 +1,7 @@
 {
   "name": "my-codex",
-  "version": "0.6.12",
-  "description": "Custom Codex extensions for agent workflows, including skills, hooks, beginner-friendly explanations, concise Japanese chat replies, project task ledgers, project rule templates, project-scoped MCP setup, worktree switch, finish, cleanup, and rebase guidance, and commit message guidance.",
+  "version": "0.6.13",
+  "description": "Custom Codex extensions for agent workflows, including skills, hooks, beginner-friendly explanations, concise Japanese chat replies, project task ledgers, project rule templates, project-scoped MCP setup, worktree switch, finish, cleanup, rebase guidance, commit message guidance, and Den Web Board show-me rendering.",
   "skills": "./skills/",
   "author": {
     "name": "Agent Plugins Maintainers"
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "My Codex",
     "shortDescription": "Custom extensions for Codex workflows.",
-    "longDescription": "My Codex packages custom Codex workflow extensions, including lifecycle hooks, beginner-friendly explanations, concise Japanese chat replies, project task ledgers, project tooling skills, project-local Codex rule templates, project-scoped MCP setup, worktree switch, finish, cleanup, and rebase guidance, and commit message guidance.",
+    "longDescription": "My Codex packages custom Codex workflow extensions, including lifecycle hooks, beginner-friendly explanations, concise Japanese chat replies, project task ledgers, project tooling skills, project-local Codex rule templates, project-scoped MCP setup, worktree switch, finish, cleanup, rebase guidance, commit message guidance, and Den Web Board show-me rendering.",
     "developerName": "Agent Plugins Maintainers",
     "category": "Productivity",
     "capabilities": [
@@ -23,7 +23,8 @@
       "Worktree lifecycle guidance",
       "Worktree finish guidance",
       "Project task ledgers",
-      "Rebase guidance"
+      "Rebase guidance",
+      "Den Web Board show-me rendering"
     ],
     "defaultPrompt": "Use My Codex."
   }

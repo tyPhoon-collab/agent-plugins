@@ -6,7 +6,7 @@
 - 公開 repo として扱うため、ローカル絶対パス、private hostname、メールアドレス、token、secret、マシン固有値を入れない
 - 共通スキルの正本は `skills/` 配下に置き、`./scripts/sync-skills.sh` で各 plugin に実ファイルとして同期する。Codex は plugin 配下の symlink されたスキルを認識しないため、symlink に戻さない
 - Codex marketplace は `.agents/plugins/marketplace.json`、plugin 本体は `plugins/` 配下に置く
-- plugin の内容を変更したら、対応する manifest の version も更新する。version はコミット前の最終差分で patch を1回だけ上げ、作業途中の反復では重ねて上げない
+- plugin の内容を変更したら、対応する manifest の version も更新する。version はコミット前の最終差分で1回だけ上げ、作業途中の反復では重ねて上げない。新しいskillやcapabilityの追加はminor、既存内容の修正はpatch、互換性を壊す変更はmajorとする
 - capabilities を増やしたら、`README.md` と `.codex-plugin/plugin.json` の説明を更新する
 - コミットメッセージは `type: 日本語の概要` の形式にし、type は Conventional Commits に従う
 - 依存する外部スキルは `scripts/install-external-skills.sh` に記述する

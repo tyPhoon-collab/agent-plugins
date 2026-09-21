@@ -16,10 +16,10 @@ Render `show-me` results as temporary HTML and display them in a Den Web Board. 
 
 1. Run `den health --json` first.
 2. If Den cannot be reached, briefly explain that the interaction failed and stop. Do not generate an artifact or start a server.
-3. Use `show-me` to generate one temporary HTML file. Do not save it in the repository.
+3. Use `show-me` to generate one temporary HTML file at `/tmp/<unique>.html`. Use the literal `/tmp` path; do not resolve it to `/private/tmp` or another absolute path. Keep the filename unique and preserve the `.html` extension.
 4. Render Mermaid inside the HTML instead of returning it only as a code block. Load Mermaid from an available CDN or local asset with a pinned version. If rendering fails, keep the Mermaid source readable as a fallback.
 5. Put HTML, text, code-shape sketches, and diagrams in the same HTML artifact. HTML-escape text before embedding it.
-6. Open the temporary HTML with `den board web new <url> --json --focus`, using a `file://` URL first.
+6. Open the temporary HTML with `den board web new <url> --json`, using a `file://` URL first. Add `--focus` only when the user explicitly asks to bring the Board to the front.
 7. Leave the Board open for the user and do not immediately delete the temporary HTML. Briefly report that the Board was displayed and include its Board ID.
 
 ## Constraints

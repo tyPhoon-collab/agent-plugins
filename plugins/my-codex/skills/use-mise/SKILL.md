@@ -7,6 +7,11 @@ description: Use when configuring or running project tool versions managed by mi
 
 Use mise for project tool versions and environment setup. Let just handle project tasks when a justfile exists.
 
+## Command Execution
+
+- Run mise-managed tools directly when their paths are already on `PATH`; do not wrap routine commands in `mise exec`.
+- When the tool version matters, verify `command -v <tool>` and its version before running it. Use `mise exec` only when the configured tool is not available through the active environment or a per-command environment is explicitly required.
+
 ## Project Orientation
 
 1. When the task needs tool-version or environment information, look for mise configuration before inferring tools from package files:

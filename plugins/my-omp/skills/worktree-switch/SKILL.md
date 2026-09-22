@@ -12,41 +12,35 @@ Use `wt switch` with `--no-cd` from Codex. Codex can access the created worktree
 1. Confirm `wt` exists with `command -v wt`.
 2. Inspect the current worktree with `git status --porcelain --untracked-files=all`.
    Record whether it is dirty; do not modify it yet.
-3. If the repo has a remote, run `git fetch --prune` first.
-4. Choose the base:
-   - If the user explicitly specifies a base, use it after verifying it exists.
-   - Otherwise select `origin/main` when it exists; otherwise select
-     `origin/master` when it exists.
-   - When no base was specified, compare a matching local branch with the
-     selected remote using `git rev-list --left-right --count <local>...<remote>`.
-   - If local is behind or equal, use the remote branch. If local is ahead or
-     diverged, mark the base as ambiguous. Do not guess.
-   - If no matching local branch exists, use the selected remote branch.
-   - If neither remote branch exists, omit `--base` and let Worktrunk use its
-     default branch.
-5. Before changing files, resolve only ambiguous choices:
+3. Choose the base:
+   - If the user explicitly specifies a base, verify it exists and use it.
+   - Otherwise, use `--base @` when creating a new branch. `@` means the
+     current worktree/branch HEAD; uncommitted changes are handled separately.
+   - Do not fetch automatically. If the user explicitly requests a remote or
+     latest base, fetch and verify that base first.
+4. Before changing files, resolve only the dirty-worktree choice:
    - If the worktree is dirty and the user explicitly asks to move the current
      changes to a new worktree, move them without asking again.
    - If the user explicitly asks to leave the changes in the current worktree,
      do so without asking again.
    - If the worktree is dirty and the user has not specified whether to leave
      or move the changes, ask.
-   - If the base is ambiguous, ask whether to use the local or remote branch
-     unless the user explicitly specified one.
-   - Ask once when both choices need confirmation. Never discard changes.
+   - Never discard changes.
 
    To move changes, run `git stash push -u` before switching, then apply them in
    the new worktree with `git stash apply --index`. Verify success before dropping
    the stash. If application conflicts, keep the stash and report them. If
    switching cannot be completed after stashing, keep the stash and restore it
    to the original worktree before abandoning the operation.
-6. Create or switch with:
+5. Create or switch with:
 
 ```sh
 wt switch --create <branch> --no-cd --format json [--base <base>]
 ```
 
-Use `--no-hooks` when hooks would be slow, interactive, or unrelated to the task.
+Use `--base @` by default for a new branch. Use the explicit base instead when
+the user specified one. Use `--no-hooks` when hooks would be slow, interactive,
+or unrelated to the task.
 
 ## After Switching
 
@@ -57,7 +51,7 @@ Use `--no-hooks` when hooks would be slow, interactive, or unrelated to the task
 
 ## Notes
 
-- Worktrunk docs define `--base` as the source branch for `--create`; it defaults to the default branch.
+- Worktrunk docs define `--base` as the source branch for `--create`; this skill passes `--base @` explicitly so new work starts from the current branch.
 - Worktrunk docs define `--no-cd` as skipping directory change after switching, useful for CI/automation.
 - If `--create` fails because the branch exists, retry without `--create`.
 

@@ -31,6 +31,11 @@ do not silently rename another task document.
 - Use `[ ]` for open, `[/]` for in-progress, `[x]` for complete, and `[-]`
   for cancelled items. Keep blocked or deferred work in `Deferred Items` unless
   the project already defines another status convention.
+- Keep each task focused on one primary responsibility and one coherent outcome.
+  Prefer tasks that can be implemented and reviewed as one logical unit.
+- Split a task when it contains independently reviewable changes, separate acceptance
+  criteria, or multiple unrelated reasons for change. Substeps are allowed, but they
+  must serve the same outcome.
 - Keep task details actionable: purpose, work, acceptance criteria, and
   verification. Do not mark work complete without recorded verification.
 - Assign each new task the next unused ID in the ledger's single `TASK-001`

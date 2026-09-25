@@ -4,7 +4,7 @@
 - hooks, skills、MCP、scripts、workflow 補助など、一般的な AI agent plugin に入るものを扱う
 - 個人のローカル環境そのものではなく、複数マシンで再利用できる agent 拡張 package を管理
 - 公開 repo として扱うため、ローカル絶対パス、private hostname、メールアドレス、token、secret、マシン固有値を入れない
-- 共通スキルの正本は `skills/` 配下に置き、`./scripts/sync-skills.sh` で各 plugin に実ファイルとして同期する。Codex は plugin 配下の symlink されたスキルを認識しないため、symlink に戻さない
+- 共通スキルの正本は `skills/` 配下に置き、コミット前に最終差分で1回だけ `./scripts/sync-skills.sh` で各 plugin に実ファイルとして同期する。Codex は plugin 配下の symlink されたスキルを認識しないため、symlink に戻さない
 - Codex marketplace は `.agents/plugins/marketplace.json`、plugin 本体は `plugins/` 配下に置く
 - plugin の内容を変更したら、対応する manifest の version も更新する。version はコミット前の最終差分で1回だけ上げ、作業途中の反復では重ねて上げない。新しいskillやcapabilityの追加はminor、既存内容の修正はpatch、互換性を壊す変更はmajorとする
 - capabilities を増やしたら、`README.md` と `.codex-plugin/plugin.json` の説明を更新する

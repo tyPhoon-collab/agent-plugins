@@ -38,6 +38,16 @@ After changing `skills/`, regenerate the copies in all plugins:
 The command preserves plugin-specific files and agent-specific skills.
 Real files are required because Codex does not discover plugin skills through symbolic links.
 
+### Install shared skills with Skills CLI
+
+Install the shared skills to supported agents. The CLI detects installed agents and lets you choose the skills and targets:
+
+```sh
+npx skills add tyPhoon-collab/agent-plugins
+```
+
+Update installed skills with `npx skills update`.
+
 外部 skill の導入用スクリプト: [`scripts/install-external-skills.sh`](scripts/install-external-skills.sh)
 
 ### For Codex

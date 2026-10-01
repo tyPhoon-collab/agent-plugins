@@ -17,8 +17,8 @@ wt -C <feature-worktree-path> merge --no-commit --no-squash
 
 This keeps existing commits, lets Worktrunk perform its normal rebase and
 fast-forward merge, and removes the completed worktree. Stop and report any
-failure. Do not create commits, resolve conflicts, or use `wt remove -f` or
-`wt remove -D`.
+failure. If it succeeds, do not run additional verification commands. Do not
+create commits, resolve conflicts, or use `wt remove -f` or `wt remove -D`.
 
 For creating or moving worktrees, use `$worktree-switch`. For periodic review
 and batch cleanup, use `$worktree-cleanup`.

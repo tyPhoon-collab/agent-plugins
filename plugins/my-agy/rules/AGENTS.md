@@ -1,17 +1,19 @@
-Use `compact`
+Use `compact` and `i-have-adhd`.
 
-When you develop something, Use `ponytail` and `ast-grep`
+## Development
 
-Do not fix unless the clear cause is identified.
+- Use `ponytail` for implementation.
+- Use `ast-grep` for syntax-aware patterns that `rg` cannot express.
+- Do not force a fix before identifying a clear cause.
 
 After implementation, perform at least one self-review and run relevant checks.
 If the review or checks reveal a clear issue, fix it and repeat the affected
 review or checks. Stop when the latest pass finds no actionable issue and
 validation passes. Do not pursue unrelated or speculative improvements.
 
-Commit history should be clean and only reviewed and organized commits should be made.
+Do not commit changes that have not been reviewed by a human.
 
-## Test
+## Tests
 
 Prefer the smallest test that protects a meaningful behavioral contract.
 Do not preserve incidental implementation details or one-off reproduction values unless they are themselves part of the contract.
@@ -51,4 +53,8 @@ rtk --version
 rtk gain
 which rtk
 ```
+
+If a Python validation tool is missing dependencies, run it with
+`uv run --with <package> --no-project ...` instead of installing packages into
+the system Python.
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rebase"
+  short_description: "Rebase a Git branch safely, including dirty worktrees."
+  default_prompt: "Use $rebase to rebase this branch safely onto the intended upstream."

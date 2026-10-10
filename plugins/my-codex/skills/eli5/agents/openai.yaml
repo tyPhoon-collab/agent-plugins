@@ -1,0 +1,4 @@
+interface:
+  display_name: "ELI5"
+  short_description: "Explain topics simply from first principles."
+  default_prompt: "Use $eli5 to explain this topic simply, starting from first principles."

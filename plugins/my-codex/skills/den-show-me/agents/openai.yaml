@@ -1,0 +1,4 @@
+interface:
+  display_name: "Den Show Me"
+  short_description: "Display show-me results in a Den Web Board."
+  default_prompt: "Use $den-show-me to display this show-me result in a Den Web Board."

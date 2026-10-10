@@ -12,6 +12,7 @@ This repository packages lifecycle hooks, reusable skills, rules, and tooling de
 
 - **Lifecycle hooks**: Play local sounds for approval requests and completed turns (`afplay` on macOS).
 - **`compact`**: Keep Japanese chat replies concise while preserving technical content and safety-critical detail.
+- **`before-after`**: Compare states, methods, options, or results in a table, then add a one-line takeaway. Use `show-me` for visuals and `den-show-me` for Den display when helpful.
 - **`eli5`**: Explain topics from first principles in simple language, using visual structure when it improves understanding.
 - **`commit-message`**: Use `type: 日本語の概要` commit messages with Conventional Commits types when a project has no more specific rule.
 - **`use-mise`**: Treat `mise.toml` as the source of truth for project tool versions and environment setup while leaving task execution to just.

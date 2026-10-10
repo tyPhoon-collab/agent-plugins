@@ -1,0 +1,4 @@
+interface:
+  display_name: "Before / After"
+  short_description: "Compare two states and summarize the main change."
+  default_prompt: "Use $before-after to present this comparison."

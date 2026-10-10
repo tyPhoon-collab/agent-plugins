@@ -1,7 +1,7 @@
 {
   "name": "my-codex",
-  "version": "0.7.0",
-  "description": "Custom Codex extensions for agent workflows, including skills, hooks, beginner-friendly explanations, concise Japanese chat replies, project task ledgers, project rule templates, project-scoped MCP setup, worktree switch, finish, cleanup, rebase guidance, commit message guidance, Den Web Board show-me rendering, and opening files in Neovim in Den Terminal Boards.",
+  "version": "0.8.0",
+  "description": "Custom Codex extensions for agent workflows, including skills, hooks, beginner-friendly explanations, concise Japanese chat replies, Before/After comparisons, project task ledgers, project rule templates, project-scoped MCP setup, worktree switch, finish, cleanup, rebase guidance, commit message guidance, Den Web Board show-me rendering, and opening files in Neovim in Den Terminal Boards.",
   "skills": "./skills/",
   "author": {
     "name": "Agent Plugins Maintainers"
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "My Codex",
     "shortDescription": "Custom extensions for Codex workflows.",
-    "longDescription": "My Codex packages custom Codex workflow extensions, including lifecycle hooks, beginner-friendly explanations, concise Japanese chat replies, project task ledgers, project tooling skills, project-local Codex rule templates, project-scoped MCP setup, worktree switch, finish, cleanup, rebase guidance, commit message guidance, Den Web Board show-me rendering, and opening files in Neovim in Den Terminal Boards.",
+    "longDescription": "My Codex packages custom Codex workflow extensions, including lifecycle hooks, beginner-friendly explanations, concise Japanese chat replies, Before/After comparisons with one-line takeaways, project task ledgers, project tooling skills, project-local Codex rule templates, project-scoped MCP setup, worktree switch, finish, cleanup, rebase guidance, commit message guidance, Den Web Board show-me rendering, and opening files in Neovim in Den Terminal Boards.",
     "developerName": "Agent Plugins Maintainers",
     "category": "Productivity",
     "capabilities": [
@@ -17,6 +17,7 @@
       "Skills",
       "Beginner-friendly explanations",
       "Compact Japanese chat replies",
+      "Before/After comparisons",
       "Rules templates",
       "Project-scoped MCP setup",
       "Commit message guidance",

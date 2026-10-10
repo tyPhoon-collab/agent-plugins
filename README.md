@@ -24,6 +24,7 @@ This repository packages lifecycle hooks, reusable skills, rules, and tooling de
 - **`add-code-review-graph`**: Configure code-review-graph as a project-scoped MCP server (`.codex/config.toml` for Codex, `.agents/mcp_config.json` for Antigravity).
 - **`rebase`**: Rebase safely, using `--autostash` when tracked local changes exist.
 - **`den-show-me`**: Render show-me results as temporary HTML and display them in a Den Web Board.
+- **`den-open-nvim`**: Open a specified file in Neovim in a new Den Terminal Board.
 
 ## Install & Usage
 

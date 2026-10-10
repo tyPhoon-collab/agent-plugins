@@ -1,0 +1,4 @@
+interface:
+  display_name: "Den Open Nvim"
+  short_description: "Open files in Neovim on a Den Terminal Board."
+  default_prompt: "Use $den-open-nvim to open this file in a Den Terminal Board with Neovim."

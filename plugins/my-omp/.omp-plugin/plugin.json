@@ -1,5 +1,5 @@
 {
   "name": "my-omp",
-  "version": "0.2.0",
-  "description": "Shared workflow skills for oh-my-pi, including Before/After comparisons and Den Web Board show-me rendering."
+  "version": "0.3.0",
+  "description": "Shared workflow skills for oh-my-pi, including Before/After comparisons, Den Web Board show-me rendering, and opening git diff in Hunk in Den Terminal Boards."
 }

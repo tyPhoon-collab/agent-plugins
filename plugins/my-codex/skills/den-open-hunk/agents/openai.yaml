@@ -1,0 +1,4 @@
+interface:
+  display_name: "Den Open Hunk"
+  short_description: "Open git diff in Hunk on a Den Terminal Board."
+  default_prompt: "Use $den-open-hunk to review git diff in a Den Terminal Board with Hunk."

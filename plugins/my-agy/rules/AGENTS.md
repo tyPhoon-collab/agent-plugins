@@ -1,60 +1,40 @@
-Use `compact` and `i-have-adhd`.
+必ず、 `compact` と `i-have-adhd` に従うこと
 
-## Development
+## 開発
 
-- Use `ponytail` for implementation.
-- Use `ast-grep` for syntax-aware patterns that `rg` cannot express.
-- Do not force a fix before identifying a clear cause.
+- GIT_CONFIG_GLOBAL=/dev/null は禁止
+- 実装には `ponytail` を使用する。
+- DRY、KISS、YAGNI を意識する。
+- `rg` で表現できない構文を意識したパターン検索には `ast-grep` を使用する。
+- 明確で本質的な原因を特定する前に、無理な修正を行わない。
 
-After implementation, perform at least one self-review and run relevant checks.
-If the review or checks reveal a clear issue, fix it and repeat the affected
-review or checks. Stop when the latest pass finds no actionable issue and
-validation passes. Do not pursue unrelated or speculative improvements.
+実装後はセルフレビューと関連チェックを実行する。
+レビューやチェックで明らかな問題が見つかった場合は修正し、該当するレビューやチェックを再実行する。
+直近のパスで対応すべき問題がなくなるまで続ける。
+無関係・投機的な改善は追求しない。
 
-Do not commit changes that have not been reviewed by a human.
+人間によるレビューを受けていない変更はコミットしない。
 
-## Tests
+## テスト
 
-Prefer the smallest test that protects a meaningful behavioral contract.
-Do not preserve incidental implementation details or one-off reproduction values unless they are themselves part of the contract.
-Before adding a regression test, generalize the bug into the invariant that was violated.
+- 意味のある振る舞い契約を守る最小のテストを優先する。
+- 契約自体の一部でない限り、偶発的な実装詳細や一度きりの再現値を保持しない。
+- リグレッションテストを追加する前に、バグを「違反された不変条件」へと抽象化して捉える。
 
-## Tools
+## ツール
 
-### RTK - Rust Token Killer
+コマンドの長い出力をフィルタするため、シェルコマンドの前には必ず `rtk` を付ける。
 
-**Usage**: Token-optimized CLI proxy for shell commands.
-
-#### Rule
-
-Always prefix shell commands with `rtk`.
-
-Examples:
+例:
 
 ```bash
 rtk git status
 rtk cargo test
 rtk npm run build
 rtk pytest -q
+rtk proxy <cmd>     # フィルタリングなしで実行
 ```
 
-#### Meta Commands
-
-```bash
-rtk gain            # Token savings analytics
-rtk gain --history  # Recent command savings history
-rtk proxy <cmd>     # Run raw command without filtering
-```
-
-#### Verification
-
-```bash
-rtk --version
-rtk gain
-which rtk
-```
-
-If a Python validation tool is missing dependencies, run it with
-`uv run --with <package> --no-project ...` instead of installing packages into
-the system Python.
+Python の検証ツールに依存関係が不足している場合は、システム Python にパッケージをインストールするのではなく、
+`uv run --with <package> --no-project ...` で実行する。
 

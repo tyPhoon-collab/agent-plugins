@@ -12,7 +12,7 @@
     {
       "name": "my-omp",
       "description": "Shared workflow skills for oh-my-pi, including Before/After comparisons.",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "source": "./plugins/my-omp",
       "category": "productivity",
       "repository": "https://github.com/tyPhoon-collab/agent-plugins"

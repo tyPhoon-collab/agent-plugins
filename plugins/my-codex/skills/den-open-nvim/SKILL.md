@@ -5,14 +5,14 @@ description: Open a specified file in Neovim as the initial command of a new Den
 
 # Den Open Nvim
 
-Open the requested file in a new Den Terminal Board, with Neovim as its initial command.
+Open a file in Neovim on a new Den Terminal Board.
 
 ## Procedure
 
-1. Resolve the requested path against the user's stated directory or the current workspace. If the path is ambiguous, ask which file they mean. Confirm it exists and is a file; do not create a missing file.
-2. Confirm the `den` and `nvim` commands are available. Run `den health --json`; if either command is unavailable or Den is unhealthy, report it and stop.
-3. Create one Terminal Board with the file's parent directory as its working directory. Use `den board terminal new <directory> --run <command> --json`, where `<command>` starts `nvim --` with the requested file path. Quote the path for the command's shell so spaces and shell metacharacters remain part of the filename. Do not pass an unquoted path or run Nvim after board creation.
-4. Add `--focus` only when the user explicitly asks to focus the new Board.
-5. Read `board_id` from the JSON response and report it.
+1. Resolve the path from the user's stated directory or the current workspace. If ambiguous, ask which file they mean. Confirm it exists; do not create it.
+2. Check that `den` and `nvim` are available. Run `den health --json`; report any unavailable command or unhealthy status, then stop.
+3. Use the file's parent directory as `<directory>`. Set `<command>` to `nvim [+<line>] -- <file>`, including `+<line>` only when requested. Shell-quote paths. Create the Board with `den board terminal new <directory> --run <command> --json`. Do not run Nvim after Board creation.
+4. Add `--focus` only if the user explicitly requests it.
+5. Report the `board_id` from the JSON response.
 
-If Board creation fails, report the error without automatically creating another Board.
+If Board creation fails, report the error; do not create another Board automatically.

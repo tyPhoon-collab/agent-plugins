@@ -1,7 +1,7 @@
 {
   "name": "my-codex",
-  "version": "0.9.1",
-  "description": "Custom Codex extensions for agent workflows, including skills, hooks, beginner-friendly explanations, concise Japanese chat replies, Before/After comparisons, project task ledgers, project rule templates, project-scoped MCP setup, worktree switch, finish, cleanup, rebase guidance, commit message guidance, Den Web Board show-me rendering, opening files in Neovim in Den Terminal Boards, and opening git diff in Hunk in Den Terminal Boards.",
+  "version": "0.10.0",
+  "description": "Custom Codex extensions for agent workflows, including skills, hooks, beginner-friendly explanations, concise Japanese chat replies, Before/After comparisons, project task ledgers, project rule templates, project-scoped MCP setup, worktree switch, finish, cleanup, rebase guidance, commit message guidance, Den Web Board show-me rendering, opening files in Neovim and directories in Yazi in Den Terminal Boards, and opening git diff in Hunk in Den Terminal Boards.",
   "skills": "./skills/",
   "author": {
     "name": "Agent Plugins Maintainers"
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "My Codex",
     "shortDescription": "Custom extensions for Codex workflows.",
-    "longDescription": "My Codex packages custom Codex workflow extensions, including lifecycle hooks, beginner-friendly explanations, concise Japanese chat replies, Before/After comparisons with one-line takeaways, project task ledgers, project tooling skills, project-local Codex rule templates, project-scoped MCP setup, worktree switch, finish, cleanup, rebase guidance, commit message guidance, Den Web Board show-me rendering, opening files in Neovim in Den Terminal Boards, and opening git diff in Hunk in Den Terminal Boards.",
+    "longDescription": "My Codex packages custom Codex workflow extensions, including lifecycle hooks, beginner-friendly explanations, concise Japanese chat replies, Before/After comparisons with one-line takeaways, project task ledgers, project tooling skills, project-local Codex rule templates, project-scoped MCP setup, worktree switch, finish, cleanup, rebase guidance, commit message guidance, Den Web Board show-me rendering, opening files in Neovim and directories in Yazi in Den Terminal Boards, and opening git diff in Hunk in Den Terminal Boards.",
     "developerName": "Agent Plugins Maintainers",
     "category": "Productivity",
     "capabilities": [
@@ -27,7 +27,8 @@
       "Rebase guidance",
       "Den Web Board show-me rendering",
       "Den Terminal Board Neovim launch",
-      "Den Terminal Board Hunk launch"
+      "Den Terminal Board Hunk launch",
+      "Den Terminal Board Yazi launch"
     ],
     "defaultPrompt": "Use My Codex."
   }

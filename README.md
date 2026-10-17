@@ -27,6 +27,7 @@ This repository packages lifecycle hooks, reusable skills, rules, and tooling de
 - **`den-show-me`**: Render show-me results as temporary HTML and display them in a Den Web Board.
 - **`den-open-nvim`**: Open a specified file in Neovim in a new Den Terminal Board.
 - **`den-open-hunk`**: Open git diff in Hunk in a new Den Terminal Board.
+- **`den-open-yazi`**: Open a directory in Yazi in a new Den Terminal Board.
 
 ## Install & Usage
 

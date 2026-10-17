@@ -1,0 +1,4 @@
+interface:
+  display_name: "Den Open Yazi"
+  short_description: "Open directories in Yazi on a Den Terminal Board."
+  default_prompt: "Use $den-open-yazi to browse this directory in a Den Terminal Board with Yazi."

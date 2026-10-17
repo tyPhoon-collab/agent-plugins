@@ -1,4 +1,4 @@
-必ず、 `compact` と `i-have-adhd` に従うこと
+必ず、 `compact` と `i-have-adhd` スキルを view_file で読んで従うこと
 
 ## 開発
 

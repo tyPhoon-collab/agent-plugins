@@ -1,0 +1,4 @@
+interface:
+  display_name: "My Principles"
+  short_description: "Apply personal principles for agent work."
+  default_prompt: "Use $my-principles to guide investigation, implementation, and verification."

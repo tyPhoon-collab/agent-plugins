@@ -11,6 +11,7 @@ This repository packages lifecycle hooks, reusable skills, rules, and tooling de
 ## Included capabilities
 
 - **Lifecycle hooks**: Play local sounds for approval requests and completed turns (`afplay` on macOS).
+- **`my-principles`**: Apply shared personal principles for investigation, implementation, review, documentation, tests, and tools. Invoke it from each harness's instruction file; keep harness-specific customization there.
 - **`compact`**: Keep Japanese chat replies concise while preserving technical content and safety-critical detail.
 - **`before-after`**: Compare states, methods, options, or results in a table, then add a one-line takeaway. Use `show-me` for visuals and `den-show-me` for Den display when helpful.
 - **`eli5`**: Explain topics from first principles in simple language, using visual structure when it improves understanding.

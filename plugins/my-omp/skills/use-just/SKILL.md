@@ -27,6 +27,7 @@ Use just as the project task runner. Let mise manage tool versions and environme
 
 1. Add or reuse a recipe instead of repeating long commands in docs, scripts, or CI.
 2. Require doc comments for public recipes and modules so `just --list` stays useful.
+   Avoid duplicating the justfile's task list or descriptions in documentation; direct readers to `just --list` for the full list. Representative commands may still be included in documentation.
 3. Use `[group("name")]` only when distinct categories materially improve a crowded `just --list`; omit it for small or obvious recipe sets.
 4. Use `[confirm]` or `[confirm("message")]` for destructive, deploy, publish, and cleanup recipes.
 5. Use `[working-directory("path")]` instead of `cd path && ...` for recipes that run from a subdirectory.

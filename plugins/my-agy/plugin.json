@@ -1,5 +1,5 @@
 {
   "name": "my-agy",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "Custom Antigravity (AGY) extensions for agent workflows, including skills, Before/After comparisons, rebase guidance, worktree finish guidance, beginner-friendly explanations, lifecycle hooks, rules, tooling defaults, Den Web Board show-me rendering, opening files in Neovim and directories in Yazi in Den Terminal Boards, and opening git diff in Hunk in Den Terminal Boards."
 }

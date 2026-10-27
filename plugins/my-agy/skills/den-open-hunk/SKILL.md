@@ -7,6 +7,8 @@ description: Open git diff in Hunk in a Den Terminal Board, reusing a Board reco
 
 Open a Git diff in Hunk on a Den Terminal Board.
 
+Hunk automatically refreshes working-tree changes. Avoid inspecting the screen, manually reloading, or relaunching Hunk merely to confirm that file edits are reflected. This does not change the target-matching rules below.
+
 ## Procedure
 
 1. Resolve the repository root from the user's stated directory or the current workspace using `git rev-parse --show-toplevel`. If it is not a Git repository, report that and stop.

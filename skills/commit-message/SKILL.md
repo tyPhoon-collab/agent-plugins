@@ -38,8 +38,13 @@ Use Conventional Commits types. Prefer:
 
 ## Summary
 
-- Write the summary in Japanese.
-- Keep it short and specific to the actual diff.
-- Prefer the user's domain wording when the repository already uses it.
-- Do not add a scope unless project rules or nearby history clearly prefer it.
-- Do not invent impact that is not visible in the staged changes.
+- Write a concise Japanese summary of the change.
+- Prefer domain wording used in the repository.
+- Add a scope when it improves clarity or follows project conventions.
+- Base claims about the change and its impact on available evidence.
+
+## Intent
+
+Make the intent understandable when someone traces the change later, for example with `git blame`.
+If the summary and diff do not convey it, briefly explain the background, reasoning, or constraints in the body.
+Omit the body when it adds no useful context; do not recount the sequence of attempts.

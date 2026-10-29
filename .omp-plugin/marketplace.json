@@ -12,7 +12,7 @@
     {
       "name": "my-omp",
       "description": "Shared workflow skills for oh-my-pi, including Before/After comparisons, Den Board Hunk review, and opening directories in Yazi in Den Terminal Boards.",
-      "version": "0.5.6",
+      "version": "0.5.7",
       "source": "./plugins/my-omp",
       "category": "productivity",
       "repository": "https://github.com/tyPhoon-collab/agent-plugins"

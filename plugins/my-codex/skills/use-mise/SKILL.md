@@ -9,19 +9,16 @@ Use mise for project tool versions and environment setup. Let just handle projec
 
 ## Command Execution
 
-- Run mise-managed tools directly when their paths are already on `PATH`; do not wrap routine commands in `mise exec`.
-- When the tool version matters, verify `command -v <tool>` and its version before running it. Use `mise exec` only when the configured tool is not available through the active environment or a per-command environment is explicitly required.
+- Run commands normally without special handling for mise. Avoid `mise exec`.
+- If `mise exec` appears necessary, explain why and ask the user before using it, unless the user has already requested it.
+- Never include `mise exec` in project documentation or command examples.
 
 ## Project Orientation
 
-1. When the task needs tool-version or environment information, look for mise configuration before inferring tools from package files:
-   - `mise.toml`
-   - `.mise.toml`
-   - `mise/config.toml`
-   - `.mise/config.toml`
-   - `.tool-versions`
+1. When tool-version or environment information is needed, check `mise.toml` or other mise configuration before inferring it from package files.
 2. Prefer `mise.toml` for shared project configuration. Read existing dotfile-style config, but when creating or normalizing project config, use `mise.toml`.
 3. Use `[tools]` and `[env]` as the source of truth for available tools and environment variables.
+4. Use `[hooks]` for project setup that needs to run on mise lifecycle events.
 
 ## When No Mise Config Exists
 

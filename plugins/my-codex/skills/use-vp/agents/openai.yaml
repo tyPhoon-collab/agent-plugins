@@ -1,0 +1,4 @@
+interface:
+  display_name: "Use vp"
+  short_description: "Use Vite+ (vp) for Web projects, tasks, and package management."
+  default_prompt: "Use $use-vp to manage Web dependencies, run checks, or develop with Vite+."

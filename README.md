@@ -18,6 +18,7 @@ This repository packages lifecycle hooks, reusable skills, rules, and tooling de
 - **`commit-message`**: Use `type: 日本語の概要` commit messages with Conventional Commits types when a project has no more specific rule.
 - **`use-mise`**: Treat `mise.toml` as the source of truth for project tool versions and environment setup while leaving task execution to just.
 - **`use-just`**: Treat `justfile` as the project task entrypoint and prefer documented recipes over ad hoc command execution.
+- **`use-uv`**: Treat uv as the single tool for Python environments, script execution, and dependency management.
 - **`worktree-switch`**: Create and switch Worktrunk worktrees safely.
 - **`worktree-finish`**: Merge and remove a completed Worktrunk worktree.
 - **`worktree-cleanup`**: Review and remove completed Worktrunk worktrees in batches.

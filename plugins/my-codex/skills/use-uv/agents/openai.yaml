@@ -1,0 +1,4 @@
+interface:
+  display_name: "Use uv"
+  short_description: "Use uv for Python environments, projects, and scripts."
+  default_prompt: "Use $use-uv to manage Python dependencies or run isolated scripts."

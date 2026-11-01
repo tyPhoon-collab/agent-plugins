@@ -5,44 +5,22 @@ description: Use when selecting, adding, or running a project task in a project 
 
 # Use Just
 
-Use just as the project task runner. Let mise manage tool versions and environment setup.
+Use `just` as the project task runner and entrypoint for reusable commands.
 
-## Project Orientation
+## Orientation & Running
 
-1. Look for `justfile`, `Justfile`, or `.justfile`.
-2. Run `just --list` when choosing a recipe and the available recipes are
-   unknown; reuse the result while the justfile is unchanged.
-3. If module recipes are needed and their list is unknown, run `just --list --list-submodules`.
-4. Prefer existing recipes for build, test, lint, format, generate, dev, and CI flows.
-5. If both just and mise are present, let just answer "which task should run?" and mise answer "which tools and versions?"
-
-## File Layout
-
-- Prefer `justfile` for shared project entrypoints.
-- Read existing `Justfile` or `.justfile`, but suggest `justfile` when creating or normalizing shared task files.
-- Keep the root `justfile` as the entrypoint.
-- When recipes grow, use root-level modules such as `dev.just`, `test.just`, or `ci.just` with `mod dev`, `mod test`, or `mod ci`.
+1. Look for a root `justfile`. Run `just --list` (or `just --list --list-submodules` if submodules exist) when available recipes are unknown.
+2. Prefer existing recipes over direct shell commands for build, test, lint, format, dev, and CI workflows.
 
 ## Adding Recipes
 
-1. Add or reuse a recipe instead of repeating long commands in docs, scripts, or CI.
-2. Require doc comments for public recipes and modules so `just --list` stays useful.
-   Avoid duplicating the justfile's task list or descriptions in documentation; direct readers to `just --list` for the full list. Representative commands may still be included in documentation.
-3. Use `[group("name")]` only when distinct categories materially improve a crowded `just --list`; omit it for small or obvious recipe sets.
-4. Use `[confirm]` or `[confirm("message")]` for destructive, deploy, publish, and cleanup recipes.
-5. Use `[working-directory("path")]` instead of `cd path && ...` for recipes that run from a subdirectory.
-6. Use private `_name` recipes for internal helpers; short private helpers do not need comments.
-7. Use recipe dependencies for prerequisite tasks and execution order whenever possible: use `test: build` for prior dependencies, `publish: test && deploy` for subsequent dependencies, and `push target: (build target)` when passing arguments; use recursive `just` calls inside recipe bodies only when dependency syntax cannot express the required ordering.
-8. Use module recipe paths for cross-module dependencies, for example `ci: test::unit lint::all`.
+1. Keep shared entrypoints in the root `justfile`. Use `mod <name>` to split large justfiles into namespaced submodules when it improves maintenance.
+2. Require doc comments for public recipes so `just --list` stays useful. Point users to `just --list` rather than duplicating the full recipe list in documentation.
+3. Use recipe dependency syntax for prerequisites and execution order (e.g. `test: build`, `publish: test && deploy`, `push target: (build target)`). Avoid recursive `just` calls inside recipe bodies unless dependency syntax cannot express the order.
+4. Use submodule paths for cross-module dependencies (e.g. `ci: test::unit lint::all`).
+5. Use private `_name` recipes for internal helpers.
+6. Use attributes instead of ad-hoc shell logic:
+   - `[working-directory("path")]` instead of `cd path && ...`
+   - `[confirm]` for destructive recipes where interactive confirmation is appropriate
+7. Use `[script]` for long or stateful recipes with variables, loops, conditionals, or multi-line logic. Note that `set shell` does not apply to script recipes; use `[script(COMMAND)]` or `set script-interpreter` to specify the interpreter.
 
-## Script Recipes
-
-- Use `[script]` for long or stateful recipes with variables, loops, conditionals, or multi-line logic.
-- Use `[script(COMMAND)]` or `set script-interpreter` when a recipe needs a specific interpreter; do not assume `set shell` applies.
-- Keep short command sequences as regular recipes.
-
-## Guardrails
-
-- Do not bypass existing recipes with direct `npm`, `pnpm`, `go`, `cargo`, `flutter`, or similar commands unless the recipe is missing or unsuitable.
-- Do not put tool version management in `justfile`; use mise config for that.
-- Do not add mise tasks when the project already uses just for task running.

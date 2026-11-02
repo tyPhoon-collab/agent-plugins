@@ -1,6 +1,6 @@
 ---
 name: use-just
-description: Use when selecting, adding, or running a project task in a project with a `justfile`, `Justfile`, or `.justfile`. Treat just as the project task runner; inspect `just --list` when the available recipes are unknown.
+description: Use when selecting, adding, or running a project task in a project with a `justfile`. Treat just as the project task runner; inspect `just --list` when the available recipes are unknown.
 ---
 
 # Use Just

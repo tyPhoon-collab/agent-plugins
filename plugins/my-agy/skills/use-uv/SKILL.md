@@ -16,10 +16,11 @@ Use `uv` for Python project lifecycle, environment isolation, and script executi
 
 ## Running & Tools
 
-- Run scripts directly: `uv run <script.py>` (never `uv run python <script.py>`).
+- Run project scripts: `uv run <script.py>` (never `uv run python <script.py>`).
 - Run project tools: `uv run pytest`, `uv run ruff check`.
 - Run standalone CLI tools without project install: `uvx <tool>`.
 - Run ad-hoc verification outside the project: `uv run --no-project --with <package> <cmd>`.
+- Direct `python3`: Use for one-liners and scripts requiring only the standard library.
 
 ## Standalone Scripts (PEP 723)
 

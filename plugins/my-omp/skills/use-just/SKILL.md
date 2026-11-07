@@ -14,12 +14,13 @@ Use `just` as the project task runner and entrypoint for reusable commands.
 
 ## Adding Recipes
 
-1. Keep shared entrypoints in the root `justfile`. Use `mod <name>` to split large justfiles into namespaced submodules when it improves maintenance.
+1. Keep shared entrypoints in the root `justfile`. When splitting into namespaced submodules with `mod`, place submodule files in a `just/` directory (e.g. `mod db 'just/db.just'`).
 2. Require doc comments for public recipes so `just --list` stays useful. Point users to `just --list` rather than duplicating the full recipe list in documentation.
 3. Use recipe dependency syntax for prerequisites and execution order (e.g. `test: build`, `publish: test && deploy`, `push target: (build target)`). Avoid recursive `just` calls inside recipe bodies unless dependency syntax cannot express the order.
 4. Use submodule paths for cross-module dependencies (e.g. `ci: test::unit lint::all`).
 5. Use private `_name` recipes for internal helpers.
 6. Use attributes instead of ad-hoc shell logic:
+   - `[no-cd]` on submodule recipes that need to run from the project root rather than the submodule directory
    - `[working-directory("path")]` instead of `cd path && ...`
    - `[confirm]` for destructive recipes where interactive confirmation is appropriate
 7. Use `[script]` for long or stateful recipes with variables, loops, conditionals, or multi-line logic. Note that `set shell` does not apply to script recipes; use `[script(COMMAND)]` or `set script-interpreter` to specify the interpreter.

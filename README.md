@@ -23,7 +23,6 @@ This repository packages lifecycle hooks, reusable skills, rules, and tooling de
 - **`worktree-switch`**: Create and switch Worktrunk worktrees safely.
 - **`worktree-finish`**: Merge and remove a completed Worktrunk worktree.
 - **`worktree-cleanup`**: Review and remove completed Worktrunk worktrees in batches.
-- **`project-tasks`**: Maintain a repository-local `TASKS.md` task ledger from a bundled initialization template.
 - **`rebase`**: Rebase safely, using `--autostash` when tracked local changes exist.
 - **`den-show-me`**: Render show-me results as temporary HTML and display them in a Den Web Board.
 - **`den-open-nvim`**: Open a specified file in Neovim in a Den Terminal Board, reusing a Board recorded in the conversation for the same target.

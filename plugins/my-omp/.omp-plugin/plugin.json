@@ -1,5 +1,5 @@
 {
   "name": "my-omp",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Shared workflow skills for oh-my-pi, including Before/After comparisons, Den Web Board show-me rendering, opening git diff in Hunk, opening directories in Yazi in Den Terminal Boards, uv usage guidance, and Vite+ (vp) toolchain guidance."
 }

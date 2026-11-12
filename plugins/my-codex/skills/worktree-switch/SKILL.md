@@ -18,13 +18,8 @@ Use `wt switch` with `--no-cd` from Codex. Codex can access the created worktree
      current worktree/branch HEAD; uncommitted changes are handled separately.
    - Do not fetch automatically. If the user explicitly requests a remote or
      latest base, fetch and verify that base first.
-4. Before changing files, resolve only the dirty-worktree choice:
-   - If the worktree is dirty and the user explicitly asks to move the current
-     changes to a new worktree, move them without asking again.
-   - If the user explicitly asks to leave the changes in the current worktree,
-     do so without asking again.
-   - If the worktree is dirty and the user has not specified whether to leave
-     or move the changes, ask.
+4. Leave uncommitted changes in the current worktree by default. Move them only
+   if the user explicitly asks to move them to the new worktree.
    - Never discard changes.
 
    To move changes, run `git stash push -u` before switching, then apply them in

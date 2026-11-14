@@ -5,10 +5,6 @@ description: "Use when drafting, reviewing, or choosing a git commit message. Fo
 
 # Commit Message
 
-## Overview
-
-Make commit messages clear and predictable. Follow project conventions first; when neither project conventions nor user instructions specify a format, use a Conventional Commits type followed by a concise Japanese summary.
-
 ## Rule
 
 1. Check for project-specific commit message instructions in files such as `AGENTS.md`, `CONTRIBUTING.md`, `.github/`, release docs, or existing nearby commit history.

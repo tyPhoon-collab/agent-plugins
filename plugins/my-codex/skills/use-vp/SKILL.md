@@ -19,9 +19,9 @@ Use `vp` (Vite+) as the unified toolchain for Web and JavaScript/TypeScript proj
 
 - Run one-step validation: `vp check` (format, lint, and type check).
 - Run core workflows: `vp dev`, `vp build`, `vp test`, `vp lint`, `vp fmt`.
-- Run project tasks: `vp run <task>` (avoid `npm run <task>`).
-- Execute local binaries: `vp exec <tool>` (avoid `npx <tool>`).
+- Run project tasks: `vp run <task>`.
+- Execute local binaries: `vp exec <tool>`.
 
 ## Guardrails
 
-- In `vp` projects, never use `npm`, `yarn`, or `pnpm` for package management or dev workflows; use `vp` exclusively.
+- In `vp` projects, never use `npm`, `npx`, `yarn`, or `pnpm` for package management or dev workflows; use `vp` exclusively.

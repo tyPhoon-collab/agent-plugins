@@ -28,7 +28,7 @@ Never create a commit just to make a dirty worktree rebaseable. Use `--autostash
    git rebase --autostash <upstream>
    ```
 
-   Do not start a rebase with tracked local changes without `--autostash`. `--autostash` does not include untracked files; handle those separately when they matter.
+   `--autostash` does not include untracked files; handle those separately when they matter.
 
 4. If the rebase stops for conflicts, resolve and continue when the intended
    result is clear. If the correct resolution is ambiguous, stop and report

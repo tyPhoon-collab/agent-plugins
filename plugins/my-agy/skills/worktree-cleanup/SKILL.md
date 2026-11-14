@@ -11,8 +11,7 @@ Review candidates first, then remove only the branches the user approved.
 ## Workflow
 
 1. Confirm `wt` exists with `command -v wt`.
-2. Work from a stable worktree, usually the default-branch worktree. Do not
-   use a target worktree as Codex's `workdir` while removing it.
+2. Work from a stable worktree, usually the default-branch worktree.
 3. List worktrees:
 
 ```sh

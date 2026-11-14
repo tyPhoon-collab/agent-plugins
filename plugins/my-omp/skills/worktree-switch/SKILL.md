@@ -33,21 +33,13 @@ Use `wt switch` with `--no-cd` from Codex. Codex can access the created worktree
 wt switch --create <branch> --no-cd --format json [--base <base>]
 ```
 
-Use `--base @` by default for a new branch. Use the explicit base instead when
-the user specified one. Use `--no-hooks` when hooks would be slow, interactive,
-or unrelated to the task.
+Use `--no-hooks` when hooks would be slow, interactive, or unrelated to the task.
+If `--create` fails because the branch exists, retry without `--create`.
 
 ## After Switching
 
 - Parse the returned `path` as the worktree root. If stdout has extra human-readable lines, use the JSON object line.
 - Run subsequent commands with `workdir` set to that path.
 - Edit files under that path directly; it is a normal sibling worktree directory.
-- Do not rely on shell integration or `cd` state inside Codex.
-
-## Notes
-
-- Worktrunk docs define `--base` as the source branch for `--create`; this skill passes `--base @` explicitly so new work starts from the current branch.
-- Worktrunk docs define `--no-cd` as skipping directory change after switching, useful for CI/automation.
-- If `--create` fails because the branch exists, retry without `--create`.
 
 For periodic cleanup of completed worktrees, use `$worktree-cleanup`.

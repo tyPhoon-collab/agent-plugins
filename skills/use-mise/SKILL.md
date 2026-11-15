@@ -18,7 +18,7 @@ Use mise for project tool versions and environment setup. Let just handle projec
 1. When tool-version or environment information is needed, check `mise.toml` or other mise configuration before inferring it from package files.
 2. Prefer `mise.toml` for shared project configuration. Read existing dotfile-style config, but when creating or normalizing project config, use `mise.toml`.
 3. Use `[tools]` and `[env]` as the source of truth for available tools and environment variables.
-4. Use `[hooks]` for project setup that needs to run on mise lifecycle events.
+4. Use `[hooks]` for lifecycle setup (e.g., `postinstall = "lefthook install"`).
 
 ## When No Mise Config Exists
 

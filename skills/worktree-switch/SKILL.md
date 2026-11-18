@@ -22,11 +22,15 @@ Use `wt switch` with `--no-cd` from Codex. Codex can access the created worktree
    if the user explicitly asks to move them to the new worktree.
    - Never discard changes.
 
-   To move changes, run `git stash push -u` before switching, then apply them in
-   the new worktree with `git stash apply --index`. Verify success before dropping
-   the stash. If application conflicts, keep the stash and report them. If
-   switching cannot be completed after stashing, keep the stash and restore it
-   to the original worktree before abandoning the operation.
+   To move changes, stash with a unique message (`git stash push -u -m "<id>"`)
+   before switching and record its commit ID from
+   `git stash list --format='%H %gd %s'`. In the new worktree, apply it by
+   commit ID with `git stash apply --index <commit>`. Verify success before
+   dropping: resolve the matching `stash@{n}` for `<commit>` via
+   `git stash list --format='%H %gd'` and run `git stash drop stash@{n}`. If
+   application conflicts, keep the stash and report them. If switching cannot be
+   completed after stashing, keep the stash and restore it to the original
+   worktree using the same `<commit>` before abandoning the operation.
 5. Create or switch with:
 
 ```sh
